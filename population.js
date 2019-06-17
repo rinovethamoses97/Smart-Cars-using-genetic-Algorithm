@@ -30,10 +30,10 @@ class Population{
             var d=dist(this.cars[i].pos.x,this.cars[i].pos.y,target.x,target.y);
             this.cars[i].fitness=map(d,0,width,width,0);
             if(this.cars[i].win){
-                this.cars[i].fitness*=10;
+                this.cars[i].fitness*=50;
             }
             else if(this.cars[i].dead){
-                this.cars[i].fitness/=30;
+                this.cars[i].fitness/=20;
             }
             if(this.cars[i].fitness>max){
                 max=this.cars[i].fitness;
