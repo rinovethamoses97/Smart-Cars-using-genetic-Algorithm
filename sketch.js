@@ -2,6 +2,7 @@ var lifespan=400;
 var population;
 var target;
 var ob;
+var max=0;
 function setup(){
     createCanvas(500,500);
     target=createVector(width/2,30)

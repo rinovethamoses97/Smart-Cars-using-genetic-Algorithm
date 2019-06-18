@@ -21,10 +21,10 @@ class Car{
             this.pos.add(this.velocity);
             this.acceleration.mult(0);
         }
-        if(collideRectRect(this.pos.x-15,this.pos.y-3,30,6,target.x,target.y,10,10)){
+        if(collideRectRect(this.pos.x,this.pos.y,30,6,target.x,target.y,10,10)){
             this.win=true;   
         }
-        if(collideRectRect(this.pos.x-15,this.pos.y-3,30,6,ob.x,ob.y,300,20)|| this.pos.x>width ||this.pos.x<0 ||this.pos.y>height ||this.pos.y<0){
+        if(collideRectRect(this.pos.x,this.pos.y,30,6,ob.x,ob.y,300,20)|| this.pos.x>width ||this.pos.x<0 ||this.pos.y>height ||this.pos.y<0){
             this.dead=true;
         }
     }

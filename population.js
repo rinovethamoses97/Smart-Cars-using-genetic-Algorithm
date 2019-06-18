@@ -21,11 +21,12 @@ class Population{
             this.generation++;
             document.getElementById("gen").innerHTML="Generation= "+this.generation;
             this.fitness();
+            document.getElementById("fit").innerHTML="Max fitness= "+max;
             this.selection();
         }
     }
     fitness(){
-        var max=0;
+        max=0;
         for(var i in this.cars){
             var d=dist(this.cars[i].pos.x,this.cars[i].pos.y,target.x,target.y);
             this.cars[i].fitness=map(d,0,width,width,0);
@@ -33,7 +34,7 @@ class Population{
                 this.cars[i].fitness*=10;
             }
             else if(this.cars[i].dead){
-                this.cars[i].fitness/=10;
+                this.cars[i].fitness/=20;
             }
             if(this.cars[i].fitness>max){
                 max=this.cars[i].fitness;
@@ -67,7 +68,7 @@ class Population{
                 }
             }
             for(var j=0;j<pa.genes.length;j++){
-                if(random(1)<0.001){
+                if(random(1)<0.01){
                     child.genes[j]=p5.Vector.random2D();
                     child.genes[j].setMag(0.15);
                 }
