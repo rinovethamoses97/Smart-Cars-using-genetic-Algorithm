@@ -68,7 +68,7 @@ class Population{
                 }
             }
             for(var j=0;j<pa.genes.length;j++){
-                if(random(1)<0.01){
+                if(random(1)<0.001){
                     child.genes[j]=p5.Vector.random2D();
                     child.genes[j].setMag(0.15);
                 }
